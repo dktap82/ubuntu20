@@ -90,7 +90,7 @@ Install phpMyAdmin
 ```sh
 sudo apt-get install phpmyadmin
 ```
-[*] apache2 OK
+>[*] apache2 OK and Create Password for phpmyadmin
 
 fix root for phpMyAdmin "sudo mysql" or "sudo mysql -uroot -p12345"
 ```
