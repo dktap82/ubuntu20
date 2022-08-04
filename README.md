@@ -119,6 +119,7 @@ Enable Apache Mod_Rewrite
 
 ```
 sudo a2enmod rewrite
+sudo chown -R ubuntu var/www/html
 sudo systemctl restart apache2
 ```
 
