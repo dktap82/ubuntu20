@@ -122,5 +122,20 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 
+Add root %
+
+http://{ip}/phpmyadmin
+tab: User accounts
+Add user account
+	User name: root
+	Host name: %
+	Password: 12345
+	
+Database for user account
+check all 
+	- Create database with same name and grant all privileges
+	- Grant all privileges on wildcard name (username\_%).
+	- Global privileges Check all.
+
 ## License
 DkTaP82
