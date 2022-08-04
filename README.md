@@ -125,7 +125,7 @@ sudo systemctl restart apache2
 Add root %
 
 >http://127.0.0.1/phpmyadmin<br>
->User accounts => Add user account<br>
+>User accounts / Add user account<br>
 >User name: root<br>
 >Host name: %<br>
 >Password: 12345<br>
