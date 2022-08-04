@@ -115,5 +115,12 @@ sudo systemctl restart mariadb.service
 sudo systemctl status mariadb
 ```
 
+Enable Apache Mod_Rewrite
+
+```
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+```
+
 ## License
 DkTaP82
