@@ -72,11 +72,11 @@ sudo systemctl start mariadb.service
 sudo mysql_secure_installation
 ```
 
-- Change the root password? [Y]
-- Remove anonymous users? [Y]
-- Disallow root login remotely? [Y]
-- Remove test databse ... [Y]
-- Reload privilege tables now ? [Y]
+>Change the root password? [Y]
+Remove anonymous users? [Y]
+Disallow root login remotely? [Y]
+Remove test databse ... [Y]
+Reload privilege tables now ? [Y]
 
 Restart Mariadb
 
