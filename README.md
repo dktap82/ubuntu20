@@ -1,4 +1,4 @@
-# Ubuntu 20
+# Ubuntu 20 Webserver Php 7.4
 
 ## Installation Guide
 
