@@ -143,5 +143,26 @@ Add root %
 >
 >Go
 
+Enable Apache Multi Ports
+```sh
+sudo nano /etc/apache2/ports.conf
+```
+
+add port
+
+>Listen 80
+>Listen 8082
+
+```sh
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+add 
+
+```
+<VirtualHost *:8082>
+	DocumentRoot /var/www/html/vhosts/8082
+</VirtualHost>
+```
+
 ## License
 DkTaP82
