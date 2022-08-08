@@ -113,6 +113,11 @@ max_allowed_packet=512M
 max_connections=200
 sudo systemctl restart mariadb.service
 sudo systemctl status mariadb
+
+[mysqld] * add
+innodb_strict_mode=0
+innodb_log_file_size=256M
+innodb_log_buffer_size=256M
 ```
 
 Enable Apache Mod_Rewrite
