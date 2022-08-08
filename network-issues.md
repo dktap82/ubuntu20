@@ -1,5 +1,31 @@
 # คู่มือตั้งค่า Network บน VirtualBox
-## ตั้งค่า Adapter Network ที่ถูกเพิ่มเข้ามาตอนหลัง
+## การเพิ่ม Adapter LAN หรือ Adapter Network
+:white_check_mark: เมนูภาษาอังกฤษ | :white_check_mark: ใช้ได้ทั้ง Windows ,Linux และ macOS
+### ขั้นตอน
+1. เลือก Guest OS ที่ต้องการหรือ VM ที่การเพิ่ม โดยการคลิกขวาเลือก `Settings...`
+2. จะปรากฏหน้าต่าง Settings ขึ้นมา ไปยังแทบเมนู `Network` เลือก `Adapter 2` หรือ Adapter ไหนก็ได้ สูงสุด 4 Adapter
+3. ตัวอย่างนี้จะทำการเลือก `Adapter 2` แล้วติ๊กถูกที่ `Enable Network Adater`
+4. ที่หัวข้อ `Attached to:` หมายถึงจะให้ Adapter นี้ทำงานในรูปแบบไหน โดยจะใช้ประจำอยู่ 4 เมนู สำหรับโปรแกรมเมอร์ รายละเอียดดังนี้
+    - Not attached ไม่ระบุหรือไม่ให้มีการ เปรียบเสมือนช่องแลนที่ไม่ได้เสียบสายแลน หากมองอีกมุมเปรียบเสมือนการจองสล็อตแลนไว้เฉย ๆ
+        - หัวข้อ `Name:` ไม่มีตัวเลือก
+    - Nat เปรียบเสมือนการเสียบสายแลน โดยสามารถออกเน็ตได้ โดยจะได้ IP หมายเลข 10.0.2.0/24
+        - หัวข้อ `Name:` ไม่มีตัวเลือก
+    - Bridged Adapter เปรียบเสมือนเสียบสายแลน แต่จะได้ IP เบอร์เดียวกับเครื่องเรา เป็นการที่ VM ใช้ Adapter Network ร่วมกับเครื่องเรา
+        - หัวข้อ `Name:` มีตัวเลือก โดยจะเป็นรายชื่อ Adapter Network ในเครื่องเรา หากเป็นเครื่อง Notebook จะมีมากกว่า 1 เพราะมี Adapter Wireless(WiFi)
+    - Host-only Adapter เปรียบเสมือน Adapter Network ที่จะทำให้ VM และเครื่องเราสามารถมองเห็นกันและกัน แต่จะไม่สามารถออกเน็ตได้ โดยเมนูส่วนนี้สามารถจัดสรรเองได้ ไม่ว่าจะเป็นการเลือก IP ได้ด้วยตัวเอง หรือ ตั้งค่าให้จ่ายหรือไม่ให้จ่าย IP ด้วยก็ได้
+        - หัวข้อ `Name` มีตัวเลือก โดยจะเป็นชื่อ Adapter ที่จะใช้งานร่วมกันกับ VM และเครื่องเรา โดยจะมี Adapter เริ่มต้นที่ชื่อ `VirtualBox Host-Only Ethernet Adapter` จ่าย IP อัตโนมัติหมายเลข 192.168.56.1/24
+            - หากต้องการเพิ่ม Host-Only Adapter ไปที่เมนู `File` -> `Host Network Manager...`
+            - จะปรากฏหน้าต่าง `Host Network Manager` โดยจะมีเมนู 3 เมนูใหญ่ คือ "Create" คือการเพิ่ม | "Remove" คือการลบ | "Properties" คือรายละเอียดของ Host-Only Adapter สามารถตั้งค่าเพิ่มเติมได้ สำหรับ Host-Only Adapter ที่มีอยู่ก่อนแล้ว
+
+    ***จบหัวข้อนี้***
+
+### ในกรณีต้องการต้องการให้ Adapter Network ตัวใดตัวหนึ่ง เอาไว้ Remote SSH สามารถทำได้ ดังนี้
+1. ทำการเพิ่ม Adapter Network มากกว่า 1 ตัว โดยให้ตัว Adapter Network ตัวใดตัวหนึ่งเป็น `Nat` และอีกตัวหนึ่งเป็น `Host-Only Ethernet Adapter`
+
+:octocat: *โดยการทำงานนี้ เราจะใช้ IP ของ `Host-Only Ethernet Adapter` Remote SSH เข้าไป VM แต่จะไม่สามารถออกเน็ตได้ แต่เรามี Adapter ที่เราเซ็ทเป็น `Nat` ซึ่งเอาไว้ออกเน็ตโดยเฉพาะจะทำ VM ของเราจะสามารถใช้งานเน็ตได้ปกติ*
+## ตั้งค่า Adapter ตัวที่ 2 หรือ Adapter ที่ถูกเพิ่มเข้ามาในภายหลัง ให้รับ IP Address
+:white_check_mark: เมนูภาษาอังกฤษ | :white_check_mark: ใช้ได้ทั้ง Windows ,Linux และ macOS
+
 **ตัวอย่าง**
 ผลลัพธ์จากคำสั่ง `ip a`
 ```
@@ -77,4 +103,4 @@ cookiemilk@macvbox:~$ ip a
 ```
 ---
 ## License
-~~DkTaP82~~&nbsp;&nbsp;:cookie:CookieMilk
+~~DkTaP82~~ :cookie:CookieMilk
