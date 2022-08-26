@@ -168,5 +168,11 @@ add text
 </VirtualHost>
 ```
 
+docker mariadb
+
+```sh
+sudo docker run --name mydb --restart=always -e MYSQL_ROOT_PASSWORD='test' -v ${PWD}/container/mydb/mysql:/etc/mysql/conf.d -p 10106:3306 -d mariadb
+```
+
 ## License
 DkTaP82
