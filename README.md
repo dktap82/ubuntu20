@@ -168,6 +168,38 @@ add text
 </VirtualHost>
 ```
 
+### Docker ###
+
+linux command
+
+```sh
+sudo rm -rf <file & folder>
+sudo chown -R ubuntu <file & folder>
+```
+docker command
+
+```sh
+sudo docker ps -a //list
+sudo docker stop <Container_ID>
+sudo docker restart <Container_Name>
+sudo docker rm -f <Container_ID>
+sudo docker rmi -f <Image_name>
+
+docker exec -it <Container_Name> bash //ssh
+apt-get update && apt-get install nano //for edit
+```
+
+docker apache2 & php7
+
+```sh
+sudo docker run --name myphp --restart=always -v ${PWD}/container/myphp/html:/var/www/html -v ${PWD}/container/myphp/php:/usr/local/etc/php/conf.d -p 8081:80 -d php:7.4-apache
+
+// ssh
+a2enmod rewrite
+apt-get update && docker-php-ext-install mysqli
+service apache2 restart
+```
+
 docker mariadb
 
 ```sh
