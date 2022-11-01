@@ -203,7 +203,7 @@ service apache2 restart
 docker mariadb
 
 ```sh
-sudo docker run --name mydb --restart=always -e MYSQL_ROOT_PASSWORD='test' -v ${PWD}/container/mydb/mysql:/etc/mysql/conf.d -p 10106:3306 -d mariadb
+sudo docker run --name mydb --restart=always -e MYSQL_ROOT_PASSWORD='test' -v ${PWD}/container/mydb/mysql:/etc/mysql/conf.d -v ${PWD}/container/mydb/mysql_data:/var/lib/mysql -p 10106:3306 -d mariadb
 ```
 
 ## License
