@@ -14,6 +14,8 @@ Install the Apache Web Server on Ubuntu 20.04 [link](https://linuxhint.com/insta
 sudo apt install apache2
 apache2 -version
 sudo ufw app list
+sudo timedatectl set-timezone Asia/Bangkok
+timedatectl
 ```
 
 Set AllowOverride all /var/www/ directory
@@ -109,6 +111,7 @@ Edit 50-server.cnf
 
 ```
 bind-address=0.0.0.0
+default-time-zone = "+07:00"
 max_allowed_packet=512M
 max_connections=200
 sudo systemctl restart mariadb.service
